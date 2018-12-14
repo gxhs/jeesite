@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.ty.dao.TywjingphkDao">
+    
+	<sql id="tywjingphkColumns">
+		a.id AS "id",
+		a.jiag AS "price",
+		a.mingc AS "name",
+		a.jianj AS "introduction",
+		a.suolwj AS "thumb",
+		a.gaoqwj AS "hD"
+	</sql>
+	
+	<sql id="tywjingphkJoins">
+	</sql>
+    
+	<select id="get" resultType="Tywjingphk">
+		SELECT 
+			<include refid="tywjingphkColumns"/>
+		FROM tywjingphk a
+		<include refid="tywjingphkJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Tywjingphk">
+		SELECT 
+			<include refid="tywjingphkColumns"/>
+		FROM tywjingphk a
+		<include refid="tywjingphkJoins"/>
+		<where>
+			
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Tywjingphk">
+		SELECT 
+			<include refid="tywjingphkColumns"/>
+		FROM tywjingphk a
+		<include refid="tywjingphkJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tywjingphk(
+			id,
+			jiag,
+			mingc,
+			jianj,
+			suolwj,
+			gaoqwj
+		) VALUES (
+			#{id},
+			#{price},
+			#{name},
+			#{introduction},
+			#{thumb},
+			#{hD}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tywjingphk SET 	
+			jiag = #{price},
+			mingc = #{name},
+			jianj = #{introduction},
+			suolwj = #{thumb},
+			gaoqwj = #{hD}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM tywjingphk
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
