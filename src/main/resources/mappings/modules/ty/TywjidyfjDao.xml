@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.ty.dao.TywjidyfjDao">
+    
+	<sql id="tywjidyfjColumns">
+		a.id AS "id",
+		a.tyw_id AS "tywId",
+		a.mingc AS "mingc",
+		a.yhzc AS "yhzc",
+		a.jqjs AS "jqjs",
+		a.dlwz AS "dlwz",
+		a.jd AS "jd",
+		a.wd AS "wd",
+		a.lxdh AS "lxdh",
+		a.pxh AS "pxh",
+		a.iftuij AS "iftuij"
+	</sql>
+	
+	<sql id="tywjidyfjJoins">
+	</sql>
+    
+	<select id="get" resultType="Tywjidyfj">
+		SELECT 
+			<include refid="tywjidyfjColumns"/>
+		FROM tywjidyfj a
+		<include refid="tywjidyfjJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Tywjidyfj">
+		SELECT 
+			<include refid="tywjidyfjColumns"/>
+		FROM tywjidyfj a
+		<include refid="tywjidyfjJoins"/>
+		<where>
+			
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Tywjidyfj">
+		SELECT 
+			<include refid="tywjidyfjColumns"/>
+		FROM tywjidyfj a
+		<include refid="tywjidyfjJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tywjidyfj(
+			id,
+			tyw_id,
+			mingc,
+			yhzc,
+			jqjs,
+			dlwz,
+			jd,
+			wd,
+			lxdh,
+			pxh,
+			iftuij
+		) VALUES (
+			#{id},
+			#{tywId},
+			#{mingc},
+			#{yhzc},
+			#{jqjs},
+			#{dlwz},
+			#{jd},
+			#{wd},
+			#{lxdh},
+			#{pxh},
+			#{iftuij}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tywjidyfj SET 	
+			tyw_id = #{tywId},
+			mingc = #{mingc},
+			yhzc = #{yhzc},
+			jqjs = #{jqjs},
+			dlwz = #{dlwz},
+			jd = #{jd},
+			wd = #{wd},
+			lxdh = #{lxdh},
+			pxh = #{pxh},
+			iftuij = #{iftuij}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM tywjidyfj
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
