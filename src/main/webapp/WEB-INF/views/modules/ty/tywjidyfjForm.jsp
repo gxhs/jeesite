@@ -34,63 +34,77 @@
 		<form:hidden path="id"/>
 		<sys:message content="${message}"/>		
 		<div class="control-group">
-			<label class="control-label">tyw_id：</label>
+			<label class="control-label">行政区_ID：</label>
 			<div class="controls">
 				<form:input path="tywId" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">mingc：</label>
+			<label class="control-label">名称：</label>
 			<div class="controls">
 				<form:input path="mingc" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">yhzc：</label>
+			<label class="control-label">优惠政策：</label>
 			<div class="controls">
 				<form:input path="yhzc" htmlEscape="false" maxlength="200" class="input-xlarge "/>
 			</div>
 		</div>
+		<%--<div class="control-group">--%>
+			<%--<label class="control-label">景区介绍：</label>--%>
+			<%--<div class="controls">--%>
+				<%--<form:input path="jqjs" htmlEscape="false" maxlength="1000" class="input-xlarge "/>--%>
+			<%--</div>--%>
+		<%--</div>--%>
 		<div class="control-group">
-			<label class="control-label">jqjs：</label>
+			<label class="control-label">景区介绍:</label>
 			<div class="controls">
-				<form:input path="jqjs" htmlEscape="false" maxlength="1000" class="input-xlarge "/>
+				<form:textarea id="jqjs" htmlEscape="true" path="jqjs" rows="4" maxlength="200" class="input-xxlarge"/>
+				<sys:ckeditor replace="jqjs" uploadPath="/ty/tywjidyfj" />
 			</div>
 		</div>
+
 		<div class="control-group">
-			<label class="control-label">dlwz：</label>
+			<label class="control-label">地理位置：</label>
 			<div class="controls">
 				<form:input path="dlwz" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">jd：</label>
+			<label class="control-label">经度：</label>
 			<div class="controls">
 				<form:input path="jd" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">wd：</label>
+			<label class="control-label">纬度：</label>
 			<div class="controls">
 				<form:input path="wd" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">lxdh：</label>
+			<label class="control-label">联系电话：</label>
 			<div class="controls">
 				<form:input path="lxdh" htmlEscape="false" maxlength="20" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">pxh：</label>
+			<label class="control-label">排名次序：</label>
 			<div class="controls">
 				<form:input path="pxh" htmlEscape="false" maxlength="11" class="input-xlarge  digits"/>
 			</div>
 		</div>
+		<%--<div class="control-group">--%>
+			<%--<label class="control-label">是否推荐：</label>--%>
+			<%--<div class="controls">--%>
+				<%--<form:input path="iftuij" htmlEscape="false" maxlength="1" class="input-xlarge "/>--%>
+			<%--</div>--%>
+		<%--</div>--%>
 		<div class="control-group">
-			<label class="control-label">iftuij：</label>
+			<label class="control-label">是否推荐:</label>
 			<div class="controls">
-				<form:input path="iftuij" htmlEscape="false" maxlength="1" class="input-xlarge "/>
+				<form:radiobuttons path="iftuij" items="${fns:getDictList('yes_no')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 			</div>
 		</div>
 		<div class="form-actions">

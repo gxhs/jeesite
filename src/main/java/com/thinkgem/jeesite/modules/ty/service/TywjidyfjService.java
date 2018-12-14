@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.ty.service;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,8 @@ import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.CrudService;
 import com.thinkgem.jeesite.modules.ty.entity.Tywjidyfj;
 import com.thinkgem.jeesite.modules.ty.dao.TywjidyfjDao;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
+
 
 /**
  * 增删改查Service
@@ -36,9 +39,14 @@ public class TywjidyfjService extends CrudService<TywjidyfjDao, Tywjidyfj> {
 	
 	@Transactional(readOnly = false)
 	public void save(Tywjidyfj tywjidyfj) {
+		if (tywjidyfj.getJqjs()!=null){
+			tywjidyfj.setJqjs(StringEscapeUtils.unescapeHtml4(tywjidyfj.getJqjs()));
+		}
 		super.save(tywjidyfj);
+		CmsUtils.removeCache("tywjidyfj_"+tywjidyfj.getId());
+		CmsUtils.removeCache("tywjidyfjList");
 	}
-	
+
 	@Transactional(readOnly = false)
 	public void delete(Tywjidyfj tywjidyfj) {
 		super.delete(tywjidyfj);

@@ -218,7 +218,7 @@
 				</div>
 				<div id="openClose" class="close">&nbsp;</div>
 				<div id="right">
-					<iframe id="mainFrame" name="mainFrame" src="" style="overflow:visible;" scrolling="yes" frameborder="no" width="100%" height="650"></iframe>
+					<iframe id="mainFrame" name="mainFrame" src="" s scrolling="yes" frameborder="no" width="100%" height="650"></iframe>
 				</div>
 			</div>
 		    <div id="footer" class="row-fluid">
