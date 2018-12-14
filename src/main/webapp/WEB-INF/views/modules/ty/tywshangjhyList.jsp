@@ -32,16 +32,37 @@
 	<sys:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead>
+
 			<tr>
+				<th>单位名称</th>
+				<th>商家类型</th>
+				<th>文字介绍</th>
+				<th>会员政策</th>
+				<th>折扣幅度</th>
+				<th>地理位置</th>
+				<th>纬度</th>
+				<th>经度</th>
+				<th>联系人</th>
+				<th>联系电话</th>
 				<shiro:hasPermission name="ty:tywshangjhy:edit"><th>操作</th></shiro:hasPermission>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="tywshangjhy">
 			<tr>
+				<td>${tywshangjhy.danwmc}</td>
+				<td>${tywshangjhy.shangjlx}</td>
+				<td>${tywshangjhy.wenzjs}</td>
+				<td>${tywshangjhy.huiyzc}</td>
+				<td>${tywshangjhy.zkfd}</td>
+				<td>${tywshangjhy.dlwz}</td>
+				<td>${tywshangjhy.wd}</td>
+				<td>${tywshangjhy.jd}</td>
+				<td>${tywshangjhy.lianxr}</td>
+				<td>${tywshangjhy.lxdh}</td>
 				<shiro:hasPermission name="ty:tywshangjhy:edit"><td>
-    				<a href="${ctx}/ty/tywshangjhy/form?id=${tywshangjhy.id}">修改</a>
-					<a href="${ctx}/ty/tywshangjhy/delete?id=${tywshangjhy.id}" onclick="return confirmx('确认要删除该商家信息吗？', this.href)">删除</a>
+    				<a class="btn btn-primary btn-xs" href="${ctx}/ty/tywshangjhy/form?id=${tywshangjhy.id}">修改</a>
+					<a class="btn btn-danger btn-xs" href="${ctx}/ty/tywshangjhy/delete?id=${tywshangjhy.id}" onclick="return confirmx('确认要删除该商家信息吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

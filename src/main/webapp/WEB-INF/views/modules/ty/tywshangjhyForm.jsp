@@ -34,73 +34,73 @@
 		<form:hidden path="id"/>
 		<sys:message content="${message}"/>		
 		<div class="control-group">
-			<label class="control-label">tyw_id：</label>
+			<label class="control-label">行政区_ID：</label>
 			<div class="controls">
 				<form:input path="tywId" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">danwmc：</label>
+			<label class="control-label">单位名称：</label>
 			<div class="controls">
 				<form:input path="danwmc" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">shangjlx：</label>
+			<label class="control-label">商家类型：</label>
 			<div class="controls">
 				<form:input path="shangjlx" htmlEscape="false" maxlength="1" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">wenzjs：</label>
+			<label class="control-label">文字介绍：</label>
 			<div class="controls">
 				<form:input path="wenzjs" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">huiyzc：</label>
+			<label class="control-label">会员政策：</label>
 			<div class="controls">
 				<form:input path="huiyzc" htmlEscape="false" maxlength="200" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">zkfd：</label>
+			<label class="control-label">折扣幅度：</label>
 			<div class="controls">
 				<form:input path="zkfd" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">dlwz：</label>
+			<label class="control-label">地理位置：</label>
 			<div class="controls">
 				<form:input path="dlwz" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">wd：</label>
+			<label class="control-label">纬度：</label>
 			<div class="controls">
 				<form:input path="wd" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">jd：</label>
+			<label class="control-label">经度：</label>
 			<div class="controls">
 				<form:input path="jd" htmlEscape="false" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">lianxr：</label>
+			<label class="control-label">联系人：</label>
 			<div class="controls">
 				<form:input path="lianxr" htmlEscape="false" maxlength="50" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">lxdh：</label>
+			<label class="control-label">联系电话：</label>
 			<div class="controls">
 				<form:input path="lxdh" htmlEscape="false" maxlength="20" class="input-xlarge "/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">pxh：</label>
+			<label class="control-label">排名次序:</label>
 			<div class="controls">
 				<form:input path="pxh" htmlEscape="false" maxlength="11" class="input-xlarge "/>
 			</div>

@@ -15,18 +15,18 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 public class Tywshangjhy extends DataEntity<Tywshangjhy> {
 	
 	private static final long serialVersionUID = 1L;
-	private String tywId;		// tyw_id
-	private String danwmc;		// danwmc
-	private String shangjlx;		// shangjlx
-	private String wenzjs;		// wenzjs
-	private String huiyzc;		// huiyzc
-	private String zkfd;		// zkfd
-	private String dlwz;		// dlwz
-	private String wd;		// wd
-	private String jd;		// jd
-	private String lianxr;		// lianxr
-	private String lxdh;		// lxdh
-	private String pxh;		// pxh
+	private String tywId;		// 行政区_ID
+	private String danwmc;		// 单位名称
+	private String shangjlx;		// 商家类型
+	private String wenzjs;		// 文字介绍
+	private String huiyzc;		//会员政策
+	private String zkfd;		// 折扣幅度
+	private String dlwz;		// 地理位置
+	private String wd;		//纬度
+	private String jd;		// 经度
+	private String lianxr;		// 联系人
+	private String lxdh;		// 联系电话
+	private String pxh;		// 排名次序
 	
 	public Tywshangjhy() {
 		super();
