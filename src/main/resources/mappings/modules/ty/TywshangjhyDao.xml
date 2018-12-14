@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.ty.dao.TywshangjhyDao">
+    
+	<sql id="tywshangjhyColumns">
+		a.id AS "id",
+		a.tyw_id AS "tywId",
+		a.danwmc AS "danwmc",
+		a.shangjlx AS "shangjlx",
+		a.wenzjs AS "wenzjs",
+		a.huiyzc AS "huiyzc",
+		a.zkfd AS "zkfd",
+		a.dlwz AS "dlwz",
+		a.wd AS "wd",
+		a.jd AS "jd",
+		a.lianxr AS "lianxr",
+		a.lxdh AS "lxdh",
+		a.pxh AS "pxh"
+	</sql>
+	
+	<sql id="tywshangjhyJoins">
+	</sql>
+    
+	<select id="get" resultType="Tywshangjhy">
+		SELECT 
+			<include refid="tywshangjhyColumns"/>
+		FROM tywshangjhy a
+		<include refid="tywshangjhyJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Tywshangjhy">
+		SELECT 
+			<include refid="tywshangjhyColumns"/>
+		FROM tywshangjhy a
+		<include refid="tywshangjhyJoins"/>
+		<where>
+			
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Tywshangjhy">
+		SELECT 
+			<include refid="tywshangjhyColumns"/>
+		FROM tywshangjhy a
+		<include refid="tywshangjhyJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tywshangjhy(
+			id,
+			tyw_id,
+			danwmc,
+			shangjlx,
+			wenzjs,
+			huiyzc,
+			zkfd,
+			dlwz,
+			wd,
+			jd,
+			lianxr,
+			lxdh,
+			pxh
+		) VALUES (
+			#{id},
+			#{tywId},
+			#{danwmc},
+			#{shangjlx},
+			#{wenzjs},
+			#{huiyzc},
+			#{zkfd},
+			#{dlwz},
+			#{wd},
+			#{jd},
+			#{lianxr},
+			#{lxdh},
+			#{pxh}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE tywshangjhy SET 	
+			tyw_id = #{tywId},
+			danwmc = #{danwmc},
+			shangjlx = #{shangjlx},
+			wenzjs = #{wenzjs},
+			huiyzc = #{huiyzc},
+			zkfd = #{zkfd},
+			dlwz = #{dlwz},
+			wd = #{wd},
+			jd = #{jd},
+			lianxr = #{lianxr},
+			lxdh = #{lxdh},
+			pxh = #{pxh}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM tywshangjhy
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
